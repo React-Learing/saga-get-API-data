@@ -1,17 +1,9 @@
 import React from "react";
 import firebase from "firebase";
-import config from "../config/config";
 
 class Firebase extends React.Component {
   constructor() {
     super();
-
-    // if (!firebase.apps.length) {
-    //   this.app = firebase.initializeApp(config);
-    // } else {
-    //   this.app = firebase.app();
-    // }
-    // this.database = this.app.database();
 
     this.state = {
       setpath: "/set",
@@ -96,6 +88,7 @@ class Firebase extends React.Component {
     const pushText = "pushdata";
     const readPath = "/data";
     const { readonce, readon } = this.state;
+    const { readFirebase ,readAPI } = this.props;
     return (
       <div>
         <h1>Firebase Example</h1>
@@ -151,6 +144,11 @@ class Firebase extends React.Component {
             <div>
               <p>讀取到的檔案:</p>
               <p>{JSON.stringify(readon)}</p>
+            </div>
+            <div>
+                <button onClick={ () => readFirebase('/push')}>
+                Read FirebaseSaga
+              </button>
             </div>
           </div>
         </div>
