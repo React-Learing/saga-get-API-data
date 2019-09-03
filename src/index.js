@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Counter from "./containers/counter";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import Counter from './containers/counter';
 import configureStore from './store/configureStore';
-import Firebase from './containers/firebase'
-import FirebaseInit from './firebase/Firebase'
+import Firebase from './containers/firebase';
+import FirebaseInit from './firebase/Firebase';
 
-import "./styles.css";
+import './styles.css';
 
 const store = configureStore();
-FirebaseInit.init()
+FirebaseInit.init();
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={store}>

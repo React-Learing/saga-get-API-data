@@ -1,25 +1,25 @@
 import expect from 'expect';
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow, configure } from 'enzyme';
 import { Provider } from 'react-redux';
-import App from '../../containers/counter';
 import Adapter from 'enzyme-adapter-react-16';
-import { shallow, configure } from 'enzyme';
+import App from '../../containers/counter';
+
 import configureStore from '../../store/configureStore';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 function setup(initialState) {
   const store = configureStore(initialState);
   const app = mount(
-    <Provider store= {store}>
+    <Provider store={store}>
       <App />
     </Provider>
   );
   return {
     app,
     buttons: app.find('button'),
-    span: app.find('span')
+    span: app.find('span'),
   };
 }
 

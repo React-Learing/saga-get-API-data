@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
-import counter from "./counter";
-import read from './read'
+import { combineReducers } from 'redux';
+import counter from './counter';
+import read from './read';
 
 const rootReducer = combineReducers({
   counter,
-  read
+  read,
 });
 
 export default rootReducer;

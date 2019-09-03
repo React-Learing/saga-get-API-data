@@ -1,8 +1,15 @@
-import React from "react";
+import React from 'react';
 
 class Counter extends React.Component {
   render() {
-    const { value, onIncrement, onDecrement, incrementAsync, readAPI, data } = this.props;
+    const {
+      value, onIncrement, onDecrement, incrementAsync, readAPI,
+    } = this.props;
+
+    const {
+      data, isLoading,
+    } = this.props.read;
+
     return (
       <div>
         <h2>Counter</h2>
@@ -27,9 +34,9 @@ class Counter extends React.Component {
             </button>
           </div>
           <div>
-            { data? JSON.stringify(data.data):''}
+            { isLoading ? 'Loading...' : JSON.stringify(data)}
           </div>
-         
+
         </div>
       </div>
     );

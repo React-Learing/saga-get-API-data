@@ -1,6 +1,6 @@
-import { INCREMENT, DECREMENT } from "../actions";
+import { INCREMENT, DECREMENT } from '../actions';
 
-export default function counterReducer(state=120, action) {
+export default function counterReducer(state = 120, action) {
   switch (action.type) {
     case INCREMENT:
       return state + 1;
