@@ -1,14 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
   render() {
     const {
-      value, onIncrement, onDecrement, incrementAsync, readAPI,
+      value, onIncrement, onDecrement, incrementAsync, readAPI, read,
     } = this.props;
 
-    const {
-      data, isLoading,
-    } = this.props.read;
 
     return (
       <div>
@@ -34,7 +32,7 @@ class Counter extends React.Component {
             </button>
           </div>
           <div>
-            { isLoading ? 'Loading...' : JSON.stringify(data)}
+            { read.isLoading ? 'Loading...' : JSON.stringify(read.data)}
           </div>
 
         </div>
@@ -42,5 +40,14 @@ class Counter extends React.Component {
     );
   }
 }
+
+Counter.propTypes = {
+  value: PropTypes.number.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired,
+  readAPI: PropTypes.func.isRequired,
+  incrementAsync: PropTypes.func.isRequired,
+  read: PropTypes.shape([]).isRequired,
+};
 
 export default Counter;

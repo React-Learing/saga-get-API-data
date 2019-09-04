@@ -9,20 +9,21 @@ const initialState = {
 
 export default function readData(state = initialState, action) {
   switch (action.type) {
-    case READ_REQUEST:
-      console.log('READ_REQUEST');
+    case READ_REQUEST: {
       return {
         ...state,
         isLoading: true,
       };
-    case READ_SUCCES:
-      console.log('read done');
+    }
+
+    case READ_SUCCES: {
       const data = action.payload;
       return {
         ...state,
         isLoading: false,
         data,
       };
+    }
     default:
       return state;
   }

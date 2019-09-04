@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../../sagas/index';
-import { incrementAsync, readAPI } from '../../actions/index';
+import { incrementAsync } from '../../actions/index';
 
 const sagaMiddleware = createSagaMiddleware();
 const mockStore = configureMockStore([sagaMiddleware]);

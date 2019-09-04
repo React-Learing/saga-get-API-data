@@ -1,9 +1,6 @@
 const config = {
-  databaseURL: 'https://test-d60e6.firebaseio.com',
+  databaseURL: '',
 };
 
-if (!config.databaseURL) {
-  alert('請設定config');
-}
 
 export default config;

@@ -25,14 +25,12 @@ export function incrementAsync() {
 }
 
 export function readAPI() {
-  console.log('action read');
   return {
     type: READ_API,
   };
 }
 
 export function readSucces(data) {
-  console.log('action 啟動');
   return {
     type: READ_SUCCES,
     payload: data,
@@ -40,7 +38,6 @@ export function readSucces(data) {
 }
 
 export function readRequest() {
-  console.log('readRequest 啟動');
   return {
     type: READ_REQUEST,
   };

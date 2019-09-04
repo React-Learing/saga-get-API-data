@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Counter from './containers/counter';
 import configureStore from './store/configureStore';
-import Firebase from './containers/firebase';
 import FirebaseInit from './firebase/Firebase';
 
 import './styles.css';
@@ -15,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Counter />
-      <Firebase />
     </div>
   );
 }

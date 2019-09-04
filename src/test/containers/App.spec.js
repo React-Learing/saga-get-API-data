@@ -1,6 +1,6 @@
 import expect from 'expect';
 import React from 'react';
-import { mount, shallow, configure } from 'enzyme';
+import { mount, configure } from 'enzyme';
 import { Provider } from 'react-redux';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../../containers/counter';
